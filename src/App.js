@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import Footer from './MyComponents/Footer';
+import { Header } from './MyComponents/Header';
+import { EmployeeList } from './MyComponents/EmployeeList';
+import { useState } from 'react';
+import { Employee } from './MyComponents/Employee';
+import { AddEmpForm } from './MyComponents/AddEmpForm';
+import { MainHeader } from './MyComponents/MainHeader';
+import { Route } from 'react-router-dom';
+import { Welcome } from './Packeges/Welcome';
+import { ProductDetail } from './Packeges/ProductDetail';
+import { Product } from './Packeges/Product';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <MainHeader />
+      
+      <Route path="/welcome" >
+        <Welcome />
+      </Route>
+
+      <Route path="/product" >
+        <Product />
+      </Route>
+
+      <Route path="/productDetail/:pId/:pName" >
+        <ProductDetail />
+      </Route>
+
     </div>
-  );
+  )
+
 }
 
 export default App;
